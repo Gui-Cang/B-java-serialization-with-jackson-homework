@@ -21,7 +21,7 @@ public class EventVo {
   private String id;
   private String name;
   private EventType type;
-  @JsonFormat(with = WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS)
+  @JsonFormat( shape = JsonFormat.Shape.NUMBER_INT)
   private Date time;
   @JsonUnwrapped
   private UserVo user;
