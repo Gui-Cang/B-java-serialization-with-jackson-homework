@@ -10,11 +10,11 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonInclude(JsonInclude.Include.NON_NULL)
 public class PersonVo {
   private String id;
- // @JsonSerialize( using = PersonCustomSerializer.class)
+  @JsonSerialize( nullsUsing = PersonCustomSerializer.class)
   private Integer age;
   private String name;
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   private String hobby;
 }
