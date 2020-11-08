@@ -13,6 +13,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import static com.fasterxml.jackson.annotation.JsonFormat.Feature.WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,6 +23,7 @@ public class EventVo {
   private String id;
   private String name;
   private EventType type;
+  @JsonFormat(with = WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS)
   private Date time;
   @JsonUnwrapped
 //  @JsonSerialize( using = UserCustomSerializer.class)
